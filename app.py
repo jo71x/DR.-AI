@@ -181,7 +181,7 @@ if input_data and (user_text or audio_val or uploaded_file):
 
     with st.spinner('جاري التحليل...'):
         try:
-            prompt_parts = ["أنت طبيب خبير. جاوب بالعربية بدقة.", *input_data]
+            prompt_parts = ["أنت طبيب خبير. جاوب بالعربية بدقة واذا لم يكن السؤال طبيا قل(انا نموذج للمساعدة في الامور الطبية لا يمكنني الاجابه على سؤالك).", *input_data]
             response = model.generate_content(prompt_parts)
             bot_reply = response.text
 
@@ -194,6 +194,7 @@ if input_data and (user_text or audio_val or uploaded_file):
 
         except Exception as e:
             st.error(f"حدث خطأ: {e}")
+
 
 
 
