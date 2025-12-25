@@ -29,7 +29,7 @@ STRICT_MEDICAL_PROMPT = (
 
 # تطبيق هذه التعليمات في تعريف النموذج
 model = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",
+    model_name="gemini-2.5-flash",
     system_instruction=STRICT_MEDICAL_PROMPT
 )
 # 1. إعداد الصفحة
@@ -194,5 +194,6 @@ if input_data and (user_text or audio_val or uploaded_file):
 
         except Exception as e:
             st.error(f"حدث خطأ: {e}")
+
 
 
