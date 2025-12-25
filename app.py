@@ -11,7 +11,7 @@ from pptx.enum.text import PP_ALIGN
 # 🔑 إعدادات الأمان والنموذج
 # ==========================================
 # ملاحظة: يُفضل استخدام st.secrets["GEMINI_API_KEY"] عند الرفع للموقع العام
-api_key = "AIzaSyAYNxEEBXwfgkr99ywxVs2PheIOtmfA080" 
+api_key = st.secrets["GEMINI_API_KEY"]
 
 # تعليمات النظام "الحديدية" (مع التهديد التقني)
 STRICT_SYSTEM_INSTRUCTIONS = (
@@ -147,3 +147,4 @@ if user_text or audio_val or uploaded_file:
             st.download_button("📊 تحميل التقرير (PPTX)", report, "Medical_Report.pptx")
         except Exception as e:
             st.error(f"خطأ: {e}")
+
