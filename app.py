@@ -9,7 +9,7 @@ from pptx.enum.text import PP_ALIGN
 
 # ==========================================
 # 🔑 مفتاحك هنا
-api_key = "AIzaSyAYNxEEBXwfgkr99ywxVs2PheIOtmfA080"
+api_key = st.secrets["GEMINI_API_KEY"]
 # =================================================
 
 # 1. إعداد الصفحة
@@ -173,4 +173,5 @@ if input_data and (user_text or audio_val or uploaded_file):
                                "application/vnd.openxmlformats-officedocument.presentationml.presentation")
 
         except Exception as e:
+
             st.error(f"حدث خطأ: {e}")
